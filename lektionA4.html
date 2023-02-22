@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <title>Webpage with Pictures</title>
+        <h1>Vacker A4 site</h1>
+        <meta charset="UTF-8">
+        <meta name="author" content="Tannaz">
+        <link rel="stylesheet" href="lektionA4.css"> <!-- #1 sätt att ange CSS-->
+        <!-- #2 sätt att ange CSS (under denna kommentar) -->
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <div id="increaseHeight" class="changeHeightClass" onclick="increaseHeight()"></div>
+        <div id="decreaseHeight" class="changeHeightClass" onclick="decreaseHeight()"></div>
+        <!-- #3 sätt att ange CSS (skriver "inline" innanför img-tagens attributes)-->
+        <img src="bilder/paqueta.jpg" alt="Bildtext"/> 
+        <script src="lektionA4.js"></script>
+        <button onclick="zoomin()">zooma in</button>
+        <button onclick="zoomaout()">zooma ut</button>
+        <button onclick="blurMore()">Suddigt</button>
+        <button onclick="NextImage()">Nästa bild</button>
+        <script>
+            let zoomlevel =1;
+            let currentimage =0;
+            let images = document.getElementByTagName("img");
+
+            function zoomin() {
+                zoomLevel += 0,1;
+                document.getElementById("A4").style.transform = "scale(" + zoomLevel +")";
+
+            }
+            function zoomOut() {
+                zoomLevel -= 0,1;
+                document.getElementById("A4").style.transform = "scale(" + zoomLevel +")";
+
+            }
+            function blurMore(){
+                let currentFilter = images[currentImage].style.filter  || "blur(0)";
+                let currentLevel = parseInt(currentFilter.replace("blur(","").replace(")",""));
+                images[currentImages].style.filter = "blur(" + (currentLevel)
+            }
+
+        </script>
+    </body>
+</html>
+
+#kui
